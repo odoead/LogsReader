@@ -21,14 +21,20 @@ namespace LogsReader
         {
             if (logLine.Contains("Guess expression"))
             {
-
-                Match match = Regex.Match(logLine, pattern);
-                string expression = match.Groups[1].Value;
-                _Result = ExpressionCalculator.Calculate(expression, " ").ToString();
+                string expression;
+                try {
+                    Match match = Regex.Match(logLine, pattern);
+                     expression = match.Groups[1].Value;
+                    _Result = ExpressionCalculator.Calculate(expression, " ").ToString();
+                }
+                catch(FormatException ex) {
+                    _Result = string.Empty;
+                    /* throw new Exception("expression not found", ex);*/ }
+                
             }
             else if (logLine.Contains("Guess word"))
             {
-                foreach (KeyValuePair<string, string> pair in Quiz.VertebralHeights)
+                foreach (KeyValuePair<string, string> pair in Quiz.QuizList)
                 {
                     if (logLine.Contains(pair.Key))
                     {

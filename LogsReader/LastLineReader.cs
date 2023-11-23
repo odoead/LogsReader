@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LogsReader
 {
-     class LastLineReader:IReader
+     public class LastLineReader:IReader
     {
         public  string Read(string path)
         {

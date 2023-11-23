@@ -8,9 +8,9 @@ namespace LogsReader
 {
     public static class Quiz
     {
-        public static Dictionary<string, string> VertebralHeights = new Dictionary<string, string>()
+        public static Dictionary<string, string> QuizList = new Dictionary<string, string>()
         {
-            { "111", "A" },{ "222", "B"},{ "333", "C"},
+            { "AAA", "A" },{ "BBB", "B"},{ "CCC", "C"},
         };
 
 

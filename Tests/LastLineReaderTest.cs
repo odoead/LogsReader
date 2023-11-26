@@ -21,7 +21,7 @@ namespace Tests
         {
             //Arrange
             File.WriteAllText(path, "");
-            File.WriteAllLines(path,new []{ "one","Two","three"});
+            File.WriteAllLines(path,new []{ "onee","Two","three"});
 
             //Act
             var result = reader.Read(path) ;
